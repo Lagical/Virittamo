@@ -1,29 +1,25 @@
 const mongoose = require('mongoose');
 
+// Defining the schema for form data
 const formDataSchema = new mongoose.Schema({
   dateOfIssue: {
     type: Date,
     required: true
   },
   deviceName: {
-    type: String,
-    
+    type: String,    
   },
   manufacturer: {
     type: String,
-   
   },
   deviceNumber: {
-    type: String,
-    
+    type: String,    
   },
   recipientName: {
     type: String,
-
   },
   department: {
-    type: String,
-    
+    type: String,  
   },
   returningDate: {
     type: Date,
@@ -31,6 +27,6 @@ const formDataSchema = new mongoose.Schema({
   }
 });
 
+// Creating a model named 'FormData' using the formDataSchema
 const FormData = mongoose.model('FormData', formDataSchema);
-
 module.exports = FormData;

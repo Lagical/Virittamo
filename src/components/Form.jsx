@@ -4,6 +4,7 @@ import DateOfIssuePicker from './DateOfIssuePicker.jsx';
 import ReturnDatePicker from './ReturnDatePicker.jsx';
 
 const Form = () => {
+  // State to manage form data
   const [formData, setFormData] = useState({
     dateOfIssue: null,
     deviceName: '',
@@ -14,6 +15,7 @@ const Form = () => {
     returningDate: null
   });
 
+  // Event handler for date of issue change
   const handleDateOfIssueChange = (date) => {
     setFormData({
       ...formData,
@@ -21,6 +23,7 @@ const Form = () => {
     });
   };
 
+  // Event handler for returning date change
   const handleReturningDateChange = (date) => {
     setFormData({
       ...formData,
@@ -28,6 +31,7 @@ const Form = () => {
     });
   };
 
+  // Event handler for input change
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -36,24 +40,26 @@ const Form = () => {
     });
   };
 
+  // Event handler for form submission
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default form submission behavior
     try {
+      // Sending form data to server for saving
       const response = await fetch('http://localhost:3000/formdata', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json' // Setting content type to JSON
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData) // Converting form data to JSON string
       });
       if (response.ok) {
-        console.log('Form data saved successfully');
-        window.location.href = '/';
+        console.log('Form data saved successfully'); // Log success message
+        window.location.href = '/'; // Redirect to home page after successful submission
       } else {
-        console.error('Failed to save form data');
+        console.error('Failed to save form data'); // Log error message if submission fails
       }
     } catch (error) {
-      console.error('Error saving form data:', error);
+      console.error('Error saving form data:', error); // Log error if an exception occurs
     }
   };
 
