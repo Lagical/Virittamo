@@ -81,7 +81,6 @@ function AllDevices() {
              {selectedItem && (
                  <Card>
                      <CardContent>
-                         <Typography variant="h6">Selected Device</Typography>
                          {/* Displaying details of selected device */}
                          <Typography>Device name: {selectedItem.deviceName}</Typography>
                          <Typography>Device number: {selectedItem.deviceNumber}</Typography>

@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Connect to MongoDB database
-mongoose.connect(mongodbUri, {
+mongoose.connect('mongodb+srv://groupiron:N8GuIiLAT8fd7OXj@cluster0.zjyrlee.mongodb.net/?retryWrites=true&w=majority', {
 })
 .then(() => console.log('Connected to MongoDB')) // Log success message if connected to MongoDB
 .catch(err => console.error('Error connecting to MongoDB:', err)); // Log error if connection fails
