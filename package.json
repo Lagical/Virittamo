@@ -2,7 +2,6 @@
   "name": "virittamo",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,8 +9,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@date-io/dayjs": "^3.0.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/lab": "^5.0.0-alpha.165",
+    "@mui/material": "^5.15.10",
+    "@mui/x-date-pickers": "^6.19.4",
+    "dayjs": "^1.11.10",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
