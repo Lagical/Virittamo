@@ -66,17 +66,17 @@ function AllDevices() {
          </List>
          {/* Popover displaying details of selected device */}
          <Popover
-             open={open}
-             anchorEl={anchorEl}
-             onClose={handleClosePopover}
-             anchorOrigin={{
-                 vertical: 'bottom',
-                 horizontal: 'center',
-             }}
-             transformOrigin={{
-                 vertical: 'top',
-                 horizontal: 'center',
-             }}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClosePopover}
+            anchorOrigin={{
+            vertical: 'center',
+            horizontal: 'center',
+            }}
+            transformOrigin={{
+            vertical: 'center',
+            horizontal: 'center',
+            }}
          >
              {selectedItem && (
                  <Card>
