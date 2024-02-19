@@ -3,11 +3,24 @@ const express = require('express');
 const router = express.Router();
 const FormData = require('../models/FormData.js');
 
-// Route to get all form data
+// Filtered get call and regular get call in same route
 router.get('/formdata', async (req, res) => {
   try {
-    // Fetch all form data from the database
-    const formData = await FormData.find();
+    // Extract device name and device number from query parameters
+    const { deviceName, deviceNumber } = req.query;
+
+    // Define the filter criteria
+    const filter = {};
+    if (deviceName) {
+      filter.deviceName = deviceName;
+    }
+    if (deviceNumber) {
+      filter.deviceNumber = deviceNumber;
+    }
+
+    // Fetch form data from the database based on the filter criteria
+    const formData = await FormData.find(filter);
+
     // Send the fetched form data as a JSON response
     res.json(formData);
   } catch (err) {
