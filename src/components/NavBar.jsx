@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
+import HomeIcon from '@mui/icons-material/Home';
 import { Link } from 'react-router-dom';
 
 export default function ButtonAppBar() {
@@ -15,6 +16,11 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Device issues
           </Typography>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <IconButton color="inherit">
+              <HomeIcon />
+            </IconButton>
+          </Link>
           <Link to="/formpage"style={{ textDecoration: 'none', color: 'inherit' }}>
           <IconButton color="inherit" >
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>

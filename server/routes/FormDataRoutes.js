@@ -33,4 +33,24 @@ router.post('/formdata', async (req, res) => {
   }
 });
 
+// Route to get specific device details by ID
+router.get('/formdata/:deviceId', async (req, res) => {
+  try {
+    // Extract deviceId from URL parameters
+    const deviceId = req.params.deviceId;
+    // Fetch device details from the database based on deviceId
+    const deviceDetails = await FormData.findById(deviceId);
+    if (!deviceDetails) {
+      // If device not found, send a 404 error response
+      return res.status(404).json({ error: 'Device not found' });
+    }
+    // Send device details as JSON response
+    res.json(deviceDetails);
+  } catch (err) {
+    // If an error occurs, log the error and send an internal server error response
+    console.error('Error fetching device details:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 module.exports = router;
