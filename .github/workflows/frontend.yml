@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: "18"
       - name: Install the Node modules
-        working-directory: ./frontend
+        working-directory: ./
         run: npm install
       - name: testing-library tests
-        working-directory: ./frontend
+        working-directory: ./
         run: npm run test
