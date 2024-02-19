@@ -51,7 +51,7 @@ const Form = () => {
      const isAnyFieldEmpty = Object.values(formData).some(value => value === '');
      
      if (isAnyFieldEmpty) {
-       setSnackbarOpen(true); // Open the Snackbar
+       setSnackbarOpen(true);
        return; // Stop submission if any field is empty
      }
      

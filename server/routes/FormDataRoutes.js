@@ -1,7 +1,7 @@
 // Importing required modules
 const express = require('express');
 const router = express.Router();
-const FormData = require('../models/FormData.js'); // Importing FormData model
+const FormData = require('../models/FormData.js');
 
 // Route to get all form data
 router.get('/formdata', async (req, res) => {
